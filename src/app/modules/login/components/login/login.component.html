@@ -1,0 +1,27 @@
+<div class="container small">
+    <div class="card card-primary" style="padding: 0px;">
+        <h5 class="card-header text-center">Inicio de sesión</h5>
+        
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit(loginForm)">
+            <div class="card-body">
+                <div class="form-group">
+                    <label>CUIT</label>
+                    <input type="text" class="form-control" formControlName="cuit" autofocus reqiured>
+                    <!-- <div *ngIf="loginForm.get('cuit').invalid && loginForm.get('cuit').errors && (loginForm.get('cuit').dirty || loginForm.get('cuit').touched)">
+                        <small class="text-danger" *ngIf="loginForm.get('cuit').hasError('required')">El campo es obligatorio!</small>
+                    </div> -->
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" class="form-control" formControlName="password" autocomplete="off">
+                    <small class="text-danger" *ngIf="userValid">Usuario o password incorrectos</small>
+                </div>
+            </div>
+            
+            <div class="card-footer text-center">
+                <button type="submit" class="btn boton" [disabled]="!loginForm.valid">Ingresar</button>
+            </div>
+        </form>
+    </div>
+</div>
