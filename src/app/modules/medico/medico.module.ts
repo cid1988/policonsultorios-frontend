@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConsultaComponent } from './components/consulta/consulta.component';
 
 const medicoRoutes: Routes = [
   {path: "medico-login", component: LoginComponent},
@@ -17,7 +18,8 @@ const medicoRoutes: Routes = [
 @NgModule({
   declarations: [
     AgendaComponent,
-    LoginComponent
+    LoginComponent,
+    ConsultaComponent
   ],
   imports: [
     CommonModule,

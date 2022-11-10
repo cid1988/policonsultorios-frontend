@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AfiliadoModule } from './modules/afiliado/afiliado.module';
 import { MedicoModule } from './modules/medico/medico.module';
+import { VideoconsultaModule } from './modules/videoconsulta/videoconsulta.module';
 import { TokenInterceptorService } from './shared-modules/interceptors/token-interceptor.service';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { TokenInterceptorService } from './shared-modules/interceptors/token-int
     HttpClientModule,
     MedicoModule,
     AfiliadoModule,
+    VideoconsultaModule,
     CookieModule.forRoot()
   ],
   providers: [
