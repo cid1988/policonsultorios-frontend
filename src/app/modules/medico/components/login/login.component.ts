@@ -25,8 +25,7 @@ export class LoginComponent implements OnInit {
     if(loginForm.valid){
       this.medicoService.login(loginForm.value).subscribe(
         (user: any) => {
-          console.log(user)
-          // this.route.navigate(['perfil']);
+          this.route.navigate(['medico-agenda']);
         },
         err => {
           // this.userValid = err;
