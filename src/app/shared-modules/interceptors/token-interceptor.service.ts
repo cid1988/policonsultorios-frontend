@@ -4,14 +4,14 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { LoginService } from 'src/app/modules/login/services/login.service';
+import { MedicoService } from 'src/app/modules/medico/services/medico.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TokenInterceptorService implements HttpInterceptor {
 
-  constructor(private cookieService: CookieService, private router: Router, private loginService: LoginService){}
+  constructor(private cookieService: CookieService, private router: Router, private loginService: MedicoService){}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const idToken = this.cookieService.get("token");

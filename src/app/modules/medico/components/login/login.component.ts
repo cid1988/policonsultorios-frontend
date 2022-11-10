@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CookieService } from 'ngx-cookie';
-import { LoginService } from '../../services/login.service';
+import { MedicoService } from '../../services/medico.service';
 
 @Component({
   selector: 'app-login',
@@ -17,24 +16,20 @@ export class LoginComponent implements OnInit {
     password: ['', Validators.required],
   });
 
-  constructor(private fb: FormBuilder, private route: Router, private loginService: LoginService, private cookieService: CookieService) { }
+  constructor(private fb: FormBuilder, private route: Router, private medicoService: MedicoService) { }
 
   ngOnInit(): void {
-    // const userCookie = this.cookieService.get('user');
-    // if(userCookie){
-    //   this.route.navigate(['perfil'])
-    // }
   }
 
   onSubmit(loginForm:any) {
     if(loginForm.valid){
-      this.loginService.login(loginForm.value).subscribe(
+      this.medicoService.login(loginForm.value).subscribe(
         (user: any) => {
-          this.cookieService.put('username', user.nombre)
-          this.route.navigate(['perfil']);
+          console.log(user)
+          // this.route.navigate(['perfil']);
         },
         err => {
-          this.userValid = err;
+          // this.userValid = err;
         }
       )
     }

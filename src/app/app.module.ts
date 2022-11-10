@@ -4,8 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CookieModule } from 'ngx-cookie';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginModule } from './modules/login/login.module';
-import { PerfilMedicoModule } from './modules/perfil-medico/perfil-medico.module';
+import { AfiliadoModule } from './modules/afiliado/afiliado.module';
+import { MedicoModule } from './modules/medico/medico.module';
 import { TokenInterceptorService } from './shared-modules/interceptors/token-interceptor.service';
 
 @NgModule({
@@ -15,9 +15,9 @@ import { TokenInterceptorService } from './shared-modules/interceptors/token-int
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule,
     HttpClientModule,
-    PerfilMedicoModule,
+    MedicoModule,
+    AfiliadoModule,
     CookieModule.forRoot()
   ],
   providers: [
